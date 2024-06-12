@@ -1,0 +1,35 @@
+_t0 = 1
+x = _t0
+_t1 = 1
+y = _t1
+_t2 = 0
+i = _t2
+_t3 = 10
+_t4 = 2
+L0:
+ifz i <= _t3 goto L1
+_t5 = y
+_t6 = 2
+_t7 = _t5 * _t6
+_t8 = x
+_t9 = i
+_t10 = _t8 * _t9
+_t11 = _t7 + _t10
+y = _t11
+i = i + _t4
+goto L0
+L1
+
+
+
+
+
+
+
+
+
+
+
+
+código intermédio
+

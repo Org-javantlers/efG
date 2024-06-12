@@ -1,0 +1,52 @@
+x = 1
+y = 1
+i = 0
+L0:
+ifz i <= 10 goto L1
+_t7 = y * 2
+_t10 = x * i
+_t11 = _t7 + _t10
+y = _t11
+i = i + 2
+goto L0
+L1:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Re: e-fólio global
+por Jorge Morais - Terça, 11 Junho 2024, 20:26
+Otimização
+Usando a propagação de constante (CtP)/ propagação de cópia (CpP) e eliminação de código morto (DCE) em _t0, _t1, _t2, _t3, _t4, _t5, _t6, _t8 e _t9
+
+
+
+Como x não é alterado desde o início também posso fazer propagação de constante, mas não eliminação de código morto, dado que x não é variável temporária, temos _t10 = 1 * i.
+Por simplificação algébrica, temos _t10 = i, e depois por propagação de cópia e eliminação de código morto em _t10, temos _t11 = _t7 + i, e depois com o mesmo em _t11 ficamos com y = _t7 + i
+
+x = 1
+y = 1
+i = 0
+L0:
+ifz i <= 10 goto L1
+_t7 = y * 2
+y = _t7 + i
+i = i + 2
+goto L0
+L1:
